@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Utah Clinics: Map + Scatter</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #f6f7f9;
+      color: #111;
+    }
+    .wrap { max-width: 980px; margin: 40px auto; padding: 0 16px; }
+    .card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      padding: 16px 16px 8px 16px;
+      margin-bottom: 24px;
+    }
+    .title { font-size: 18px; font-weight: 650; margin: 6px 4px 2px 4px; }
+    .subtitle { font-size: 13px; color: rgba(0,0,0,0.65); margin: 0 4px 10px 4px; }
+    #map { width: 100%; height: 560px; }
+    #plot { width: 100%; height: 560px; }
+    .footer { font-size: 12px; color: rgba(0,0,0,0.6); margin: 10px 4px 8px 4px; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="card">
+      <div class="title">Geographic Disparities in Primary Care Access and Life Expectancy Across Utah Counties</div>
+
+      <div class="subtitle">
+        This project examines healthcare differences within Utah, focusing specifically on the geographic distribution of federally qualified health centers (FQHCs) and how that relates to life expectancy across counties.
+      </div>
+
+      <p>
+        We are examining whether counties with more access to federally funded clinics look different from those without them.
+      </p>
+
+      <p>
+        This project looks at how access to federally qualified health centers relates to life expectancy across Utah counties.
+      </p>
+    </div>
+
+    <!-- MAP CARD (kept formatting as-is, just id renamed to avoid collisions) -->
+    <div class="card">
+      <div class="title" id="mapTitle">Clinics by County (Utah)</div>
+      <div class="subtitle">Toggle raw counts vs per-capita rates.</div>
+      <div id="map"></div>
+      <div class="footer">Hover counties for details. Missing values appear as no-fill.</div>
+    </div>
+
+    <div class="card">
+      <p>
+        This interactive choropleth map displays clinic presence and life expectancy by county.
+      </p>
+
+      <p>
+        Because raw clinic counts can be misleading, i.e., larger counties naturally tend to have more facilities. Because of this, we decided to measure clinics per 10,000 residents, along with the relationship with life expectancy. This new metric allows for more meaningful comparisons across counties of different sizes.
+      </p>
+
+      <p>
+        Across Utah's 29 counties, access to federally qualified health centers varies considerably. Seventeen counties contain at least one clinic site, while twelve, which account for roughly 40 percent of Utah's counties, have none. This reveals a substantial geographic disparity in primary care availability.
+      </p>
+    </div>
+
+    <!-- SCATTER CARD (kept formatting as-is) -->
+    <div class="card">
+      <div class="title" id="plotTitle">Life expectancy vs clinic access — Raw counts</div>
+      <div class="subtitle" id="statsLine">Computing…</div>
+      <div id="plot"></div>
+      <div class="footer">Hover points for details. Toggle raw vs per-capita in the top-right.</div>
+    </div>
+
+    <div class="card">
+      <p>
+        When examining the relationship between clinic counts and life expectancy, raw totals show little meaningful association. The correlation between total clinic count and life expectancy is weak. This is in part due to larger urban counties that tend to have more clinics but also face complex demographic and socioeconomic health challenges. Simply counting facilities does not adequately capture access to said facilities.
+      </p>
+
+      <p>
+        This scatter plot of clinics per 10,000 residents against life expectancy illustrates the access outcome relationship more clearly.
+      </p>
+
+      <p>
+        Once clinic access is adjusted for population size, a different pattern emerges. Clinics per 10,000 residents show a moderate positive association with life expectancy (+0.53 years). Counties with greater clinic availability per capita tend to exhibit higher life expectancy.
+      </p>
+
+      <p>
+        Furthermore, when comparing counties, those with at least one clinic have an average life expectancy of approximately 80.34 years, compared to 79.41 years in counties without clinics, a stunning difference of nearly one year! While we cannot establish causality through this project, there is still a meaningful correlation between the variables.
+      </p>
+
+      <p>
+        These findings suggest that primary care access may be associated with improved population health outcomes.
+      </p>
+    </div>
+
+    <!-- LIFE EXPECTANCY FIGURE -->
+    <div class="card">
+      <div class="title">Life Expectancy by County</div>
+      <div class="subtitle">County-level life expectancy estimates.</div>
+
+      <img
+        src="assets/life_expectancy_by_county.png"
+        alt="Life expectancy by county"
+        style="width:100%; border-radius:10px;"
+      />
+
+      <div class="footer">
+        Source: CDC Small Area Life Expectancy Estimates
+      </div>
+    </div>
+
+    <div class="card">
+      <p>
+        This bar chart comparing average life expectancy in counties with and without clinics highlights the categorical differences we can see throughout this project.
+      </p>
+
+      <p>
+        Even with the limitations of causality, the project highlights meaningful geographic variation in healthcare access across Utah.
+      </p>
+
+      <p>
+        Overall, the evidence suggests that access to federally qualified health centers is unevenly distributed across Utah counties and that this uneven distribution corresponds with differences in life expectancy. These differences in life expectancy differ when controlling for the population density of each county, with a positive correlation when population is controlled for. While causality cannot be claimed, the geographic disparities revealed here underscore the potential importance of primary care access in shaping population health outcomes.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="title">Citations</div>
+
+      <p>
+        <a href="https://www.cdc.gov/nchs/nvss/usaleep/usaleep.html#data" target="_blank">
+          US Small-area Life Expectancy Estimates Project – USALEEP
+        </a>
+      </p>
+
+      <p>
+        <a href="https://data.hrsa.gov/" target="_blank">
+          HRSA Data Warehouse
+        </a>
+      </p>
+
+      <p>
+        <a href="https://www.census.gov/data/datasets/time-series/demo/popest/2020s-counties-total.html" target="_blank">
+          County Population Totals and Components of Change: 2020–2024
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+<script>
+// ---------- shared helpers (single copy) ----------
+async function fetchJSON(url) {
+  const r = await fetch(url, { cache: "no-store" });
+  if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+  return r.json();
+}
+function fmt(x, digits=2) {
+  const n = Number(x);
+  return Number.isFinite(n) ? n.toFixed(digits) : "NA";
+}
+function quantile(sortedArr, q) {
+  const n = sortedArr.length;
+  if (n === 0) return null;
+  const pos = (n - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  if (sortedArr[base + 1] === undefined) return sortedArr[base];
+  return sortedArr[base] + rest * (sortedArr[base + 1] - sortedArr[base]);
+}
+function robustRange(values, qLo=0.05, qHi=0.95, fallback=[0,1]) {
+  const finite = values.filter(v => Number.isFinite(v)).sort((a,b)=>a-b);
+  if (finite.length === 0) return fallback;
+  const lo = quantile(finite, qLo);
+  const hi = quantile(finite, qHi);
+  if (!Number.isFinite(lo) || !Number.isFinite(hi) || lo === hi) return fallback;
+  return [lo, hi];
+}
+
+// Pearson correlation r between x and y, ignoring non-finite pairs
+function pearsonR(x, y) {
+  const pts = [];
+  for (let i = 0; i < x.length; i++) {
+    const xi = Number(x[i]), yi = Number(y[i]);
+    if (Number.isFinite(xi) && Number.isFinite(yi)) pts.push([xi, yi]);
+  }
+  const n = pts.length;
+  if (n < 2) return { r: null, n };
+
+  let sx=0, sy=0;
+  for (const [xi, yi] of pts) { sx += xi; sy += yi; }
+  const mx = sx / n, my = sy / n;
+
+  let sxx=0, syy=0, sxy=0;
+  for (const [xi, yi] of pts) {
+    const dx = xi - mx, dy = yi - my;
+    sxx += dx*dx; syy += dy*dy; sxy += dx*dy;
+  }
+  if (sxx === 0 || syy === 0) return { r: null, n };
+
+  return { r: sxy / Math.sqrt(sxx * syy), n };
+}
+
+// simple OLS y = a + b x, ignoring nulls
+function fitLine(x, y) {
+  const pts = [];
+  for (let i = 0; i < x.length; i++) {
+    const xi = Number(x[i]), yi = Number(y[i]);
+    if (Number.isFinite(xi) && Number.isFinite(yi)) pts.push([xi, yi]);
+  }
+  if (pts.length < 2) return null;
+
+  let sx=0, sy=0, sxx=0, sxy=0;
+  for (const [xi, yi] of pts) {
+    sx += xi; sy += yi; sxx += xi*xi; sxy += xi*yi;
+  }
+  const n = pts.length;
+  const denom = (n*sxx - sx*sx);
+  if (denom === 0) return null;
+
+  const b = (n*sxy - sx*sy) / denom;
+  const a = (sy - b*sx) / n;
+
+  const xs = pts.map(p => p[0]).sort((a,b)=>a-b);
+  const x0 = xs[0], x1 = xs[xs.length - 1];
+  return { x: [x0, x1], y: [a + b*x0, a + b*x1], a, b };
+}
+
+// ---------- MAP ----------
+async function renderMap() {
+  const geo = await fetchJSON("assets/ut_counties.geojson");
+  const metricsAll = await fetchJSON("assets/county_metrics.json");
+
+  // Remove Daggett County (to match scatter)
+  const metrics = metricsAll.filter(d => String(d.county_name).toLowerCase() !== "daggett county");
+
+  geo.features.forEach(f => { f.id = String(f.properties?.GEOID ?? f.id); });
+
+  const ids = metrics.map(d => String(d.GEOID));
+
+  const rawCounts = metrics.map(d => Number(d.clinic_count));
+  const perCapita = metrics.map(d => Number(d.clinics_per_10k));
+
+  const z_raw = rawCounts.map(v => Number.isFinite(v) ? v : null);
+  const z_pc  = perCapita.map(v => Number.isFinite(v) ? v : null);
+
+  const [rawMin, rawMax] = robustRange(
+    rawCounts, 0.00, 0.98,
+    [0, Math.max(...rawCounts.filter(Number.isFinite), 1)]
+  );
+  const [pcMin, pcMax] = robustRange(perCapita, 0.05, 0.95, [0, 1]);
+
+  const hover = metrics.map(d =>
+    `<b>${d.county_name}</b><br>` +
+    `Clinics: ${d.clinic_count}<br>` +
+    `Clinics per 10k: ${fmt(d.clinics_per_10k, 2)}<br>` +
+    `Life expectancy: ${fmt(d.life_expectancy, 2)}`
+  );
+
+  const lightBlueScaleRGBA = [
+  [0,   "rgba(232,241,250,0.55)"],
+  [0.25,"rgba(198,219,239,0.60)"],
+  [0.5, "rgba(158,202,225,0.70)"],
+  [0.75,"rgba(107,174,214,0.80)"],
+  [1,   "rgba(49,130,189,0.90)"]
+];
+
+
+
+  const trace = {
+    type: "choroplethmapbox",
+    geojson: geo,
+    locations: ids,
+    z: z_raw,
+    zmin: rawMin,
+    zmax: rawMax,
+    text: hover,
+    hoverinfo: "text",
+    colorscale: lightBlueScaleRGBA,
+    opacity: 1,
+    marker: { line: { width: 0.6, color: "rgba(255,255,255,0.7)" } },
+    colorbar: { title: "Clinics (count)" }
+  };
+
+  const layout = {
+    margin: { l: 0, r: 0, t: 0, b: 0 },
+    mapbox: {
+      style: "open-street-map",
+      center: { lat: 39.3, lon: -111.7 },
+      zoom: 5.2
+    },
+    updatemenus: [{
+      type: "buttons",
+      direction: "left",
+      x: 0.99, xanchor: "right",
+      y: 0.99, yanchor: "top",
+      pad: { t: 6, r: 6 },
+      bgcolor: "rgba(255,255,255,0.92)",
+      bordercolor: "rgba(0,0,0,0.12)",
+      borderwidth: 1,
+      font: { size: 12 },
+      buttons: [
+        {
+          label: "Raw",
+          method: "restyle",
+          args: [{
+            z: [z_raw],
+            zmin: rawMin,
+            zmax: rawMax,
+            "colorbar.title": "Clinics (count)"
+          }],
+          execute: true
+        },
+        {
+          label: "Per 10k",
+          method: "restyle",
+          args: [{
+            z: [z_pc],
+            zmin: pcMin,
+            zmax: pcMax,
+            "colorbar.title": "Clinics / 10k"
+          }],
+          execute: true
+        }
+      ]
+    }]
+  };
+
+  await Plotly.newPlot("map", [trace], layout, { displayModeBar: false, responsive: true });
+
+  // Update map title based on toggle
+  document.getElementById("mapTitle").textContent = "Clinics by County (Utah) — Raw counts";
+  const mapButtons = document.querySelectorAll("#map .updatemenu-button");
+  if (mapButtons.length >= 2) {
+    mapButtons[0].addEventListener("click", () => {
+      document.getElementById("mapTitle").textContent = "Clinics by County (Utah) — Raw counts";
+    });
+    mapButtons[1].addEventListener("click", () => {
+      document.getElementById("mapTitle").textContent = "Clinics by County (Utah) — Clinics per 10,000";
+    });
+  }
+}
+
+// ---------- SCATTER ----------
+async function renderScatter() {
+  const all = await fetchJSON("assets/county_metrics.json");
+
+  // Remove Daggett County entirely
+  const metrics = all.filter(d => String(d.county_name).toLowerCase() !== "daggett county");
+
+  const y = metrics.map(d => Number(d.life_expectancy));
+  const ySafe = y.map(v => Number.isFinite(v) ? v : null);
+  const yFinite = ySafe.filter(Number.isFinite);
+  const yMin = Math.min(...yFinite);
+
+  const xRaw = metrics.map(d => Number(d.clinic_count));
+  const xRawSafe = xRaw.map(v => Number.isFinite(v) ? v : null);
+
+  const xPC = metrics.map(d => Number(d.clinics_per_10k));
+  const xPCSafe = xPC.map(v => Number.isFinite(v) ? v : null);
+
+  const hover = metrics.map(d =>
+    `<b>${d.county_name}</b><br>` +
+    `Clinics: ${d.clinic_count}<br>` +
+    `Clinics per 10k: ${fmt(d.clinics_per_10k, 2)}<br>` +
+    `Life expectancy: ${fmt(d.life_expectancy, 2)}`
+  );
+
+  const rawR = pearsonR(xRawSafe, ySafe);
+  const pcR  = pearsonR(xPCSafe, ySafe);
+
+  const rawFit = fitLine(xRawSafe, ySafe);
+  const pcFit  = fitLine(xPCSafe, ySafe);
+
+  const scatter = {
+    type: "scatter",
+    mode: "markers",
+    x: xRawSafe,
+    y: ySafe,
+    text: hover,
+    hoverinfo: "text",
+    marker: { size: 10, opacity: 0.85 },
+  };
+
+  const trend = {
+    type: "scatter",
+    mode: "lines",
+    x: rawFit ? rawFit.x : [],
+    y: rawFit ? rawFit.y : [],
+    hoverinfo: "skip",
+    line: { width: 2 },
+    name: "Trend"
+  };
+
+  const layout = {
+    margin: { l: 60, r: 20, t: 10, b: 60 },
+    xaxis: { title: "Clinics (count)", zeroline: false },
+    yaxis: { title: "Life expectancy", zeroline: false },
+    showlegend: false,
+
+    updatemenus: [{
+      type: "buttons",
+      direction: "left",
+      x: 0.99, xanchor: "right",
+      y: 0.99, yanchor: "top",
+      pad: { t: 6, r: 6 },
+      bgcolor: "rgba(255,255,255,0.92)",
+      bordercolor: "rgba(0,0,0,0.12)",
+      borderwidth: 1,
+      font: { size: 12 },
+      buttons: [
+        {
+          label: "Raw",
+          method: "update",
+          args: [
+            { x: [xRawSafe, rawFit ? rawFit.x : []],
+              y: [ySafe,    rawFit ? rawFit.y : []] },
+            {
+              xaxis: { title: "Clinics (count)", zeroline: false },
+              yaxis: { title: "Life expectancy", zeroline: false, autorange: true }
+            }
+          ]
+        },
+        {
+          label: "Per 10k",
+          method: "update",
+          args: [
+            { x: [xPCSafe, pcFit ? pcFit.x : []],
+              y: [ySafe,   pcFit ? pcFit.y : []] },
+            {
+              xaxis: { title: "Clinics per 10,000 residents", zeroline: false },
+              yaxis: { title: "Life expectancy", zeroline: false, autorange: false, range: [yMin, 94] }
+            }
+          ]
+        }
+      ]
+    }]
+  };
+
+  await Plotly.newPlot("plot", [scatter, trend], layout, { displayModeBar: false, responsive: true });
+
+  document.getElementById("plotTitle").textContent =
+    "Life expectancy vs clinic access — Raw counts";
+  document.getElementById("statsLine").textContent =
+    `Pearson r = ${rawR.r === null ? "NA" : rawR.r.toFixed(3)} (n=${rawR.n}) — Daggett County excluded`;
+
+  const plotButtons = document.querySelectorAll("#plot .updatemenu-button");
+  if (plotButtons.length >= 2) {
+    plotButtons[0].addEventListener("click", () => {
+      document.getElementById("plotTitle").textContent =
+        "Life expectancy vs clinic access — Raw counts";
+      document.getElementById("statsLine").textContent =
+        `Pearson r = ${rawR.r === null ? "NA" : rawR.r.toFixed(3)} (n=${rawR.n}) — Daggett County excluded`;
+    });
+    plotButtons[1].addEventListener("click", () => {
+      document.getElementById("plotTitle").textContent =
+        "Life expectancy vs clinic access — Clinics per 10,000";
+      document.getElementById("statsLine").textContent =
+        `Pearson r = ${pcR.r === null ? "NA" : pcR.r.toFixed(3)} (n=${pcR.n}) — Daggett County excluded`;
+    });
+  }
+}
+
+// ---------- render both ----------
+(async function () {
+  try {
+    await renderMap();
+    await renderScatter();
+  } catch (err) {
+    console.error(err);
+    // Show an error at the top of the page (light touch)
+    const wrap = document.querySelector(".wrap");
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `<div class="title">Error</div><div class="subtitle">${String(err)}</div>`;
+    wrap.prepend(div);
+  }
+})();
+</script>
+</body>
+</html>

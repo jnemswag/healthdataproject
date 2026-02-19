@@ -1,0 +1,27 @@
+# virtualenv
+venv/
+.venv/
+
+# data (raw / downloaded)
+data/
+
+# geospatial raw formats (belt + suspenders)
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+*.gpkg
+*.geojson
+*.tif
+*.tiff
+
+# outputs / generated artifacts
+output/
+
+# misc
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

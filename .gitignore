@@ -13,7 +13,6 @@ data/
 *.cpg
 *.zip
 *.gpkg
-*.geojson
 *.tif
 *.tiff
 

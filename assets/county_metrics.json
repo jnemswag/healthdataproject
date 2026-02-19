@@ -1,0 +1,263 @@
+[
+  {
+    "GEOID": "49033",
+    "county_name": "Rich County",
+    "population_2024": 2752.0,
+    "clinic_count": 1,
+    "has_clinic": 1,
+    "clinics_per_10k": 3.633720930232558,
+    "life_expectancy": 79.0
+  },
+  {
+    "GEOID": "49005",
+    "county_name": "Cache County",
+    "population_2024": 145487.0,
+    "clinic_count": 2,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.13746932715637825,
+    "life_expectancy": 80.65652173913043
+  },
+  {
+    "GEOID": "49013",
+    "county_name": "Duchesne County",
+    "population_2024": 20803.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 80.7
+  },
+  {
+    "GEOID": "49011",
+    "county_name": "Davis County",
+    "population_2024": 378470.0,
+    "clinic_count": 1,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.026422173487991123,
+    "life_expectancy": 80.31836734693877
+  },
+  {
+    "GEOID": "49003",
+    "county_name": "Box Elder County",
+    "population_2024": 64120.0,
+    "clinic_count": 3,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.46787273861509665,
+    "life_expectancy": 79.22727272727273
+  },
+  {
+    "GEOID": "49027",
+    "county_name": "Millard County",
+    "population_2024": 13572.0,
+    "clinic_count": 1,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.7368110816386678,
+    "life_expectancy": 82.5
+  },
+  {
+    "GEOID": "49029",
+    "county_name": "Morgan County",
+    "population_2024": 13093.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 78.4
+  },
+  {
+    "GEOID": "49057",
+    "county_name": "Weber County",
+    "population_2024": 276118.0,
+    "clinic_count": 4,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.1448656009387291,
+    "life_expectancy": 77.554
+  },
+  {
+    "GEOID": "49025",
+    "county_name": "Kane County",
+    "population_2024": 8525.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 82.1
+  },
+  {
+    "GEOID": "49035",
+    "county_name": "Salt Lake County",
+    "population_2024": 1216274.0,
+    "clinic_count": 17,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.1397711370957531,
+    "life_expectancy": 78.87589743589743
+  },
+  {
+    "GEOID": "49041",
+    "county_name": "Sevier County",
+    "population_2024": 22520.0,
+    "clinic_count": 1,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.4440497335701598,
+    "life_expectancy": 78.96000000000001
+  },
+  {
+    "GEOID": "49017",
+    "county_name": "Garfield County",
+    "population_2024": 5290.0,
+    "clinic_count": 1,
+    "has_clinic": 1,
+    "clinics_per_10k": 1.890359168241966,
+    "life_expectancy": 86.25
+  },
+  {
+    "GEOID": "49053",
+    "county_name": "Washington County",
+    "population_2024": 207943.0,
+    "clinic_count": 7,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.33663071130069294,
+    "life_expectancy": 81.05714285714286
+  },
+  {
+    "GEOID": "49031",
+    "county_name": "Piute County",
+    "population_2024": 1534.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 77.4
+  },
+  {
+    "GEOID": "49043",
+    "county_name": "Summit County",
+    "population_2024": 43109.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 81.57142857142857
+  },
+  {
+    "GEOID": "49015",
+    "county_name": "Emery County",
+    "population_2024": 10161.0,
+    "clinic_count": 1,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.9841551028442083,
+    "life_expectancy": 81.86666666666666
+  },
+  {
+    "GEOID": "49009",
+    "county_name": "Daggett County",
+    "population_2024": 956.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": null
+  },
+  {
+    "GEOID": "49001",
+    "county_name": "Beaver County",
+    "population_2024": 7424.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 80.19999999999999
+  },
+  {
+    "GEOID": "49047",
+    "county_name": "Uintah County",
+    "population_2024": 38307.0,
+    "clinic_count": 2,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.522097788915864,
+    "life_expectancy": 78.60000000000001
+  },
+  {
+    "GEOID": "49049",
+    "county_name": "Utah County",
+    "population_2024": 747234.0,
+    "clinic_count": 4,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.05353075475687669,
+    "life_expectancy": 79.94910714285713
+  },
+  {
+    "GEOID": "49055",
+    "county_name": "Wayne County",
+    "population_2024": 2608.0,
+    "clinic_count": 4,
+    "has_clinic": 1,
+    "clinics_per_10k": 15.337423312883436,
+    "life_expectancy": 89.3
+  },
+  {
+    "GEOID": "49023",
+    "county_name": "Juab County",
+    "population_2024": 13297.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 79.05
+  },
+  {
+    "GEOID": "49007",
+    "county_name": "Carbon County",
+    "population_2024": 20613.0,
+    "clinic_count": 4,
+    "has_clinic": 1,
+    "clinics_per_10k": 1.9405229709406686,
+    "life_expectancy": 75.62
+  },
+  {
+    "GEOID": "49021",
+    "county_name": "Iron County",
+    "population_2024": 65936.0,
+    "clinic_count": 3,
+    "has_clinic": 1,
+    "clinics_per_10k": 0.4549866537248241,
+    "life_expectancy": 79.18571428571428
+  },
+  {
+    "GEOID": "49039",
+    "county_name": "Sanpete County",
+    "population_2024": 30732.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 79.6
+  },
+  {
+    "GEOID": "49037",
+    "county_name": "San Juan County",
+    "population_2024": 14601.0,
+    "clinic_count": 10,
+    "has_clinic": 1,
+    "clinics_per_10k": 6.848845969454147,
+    "life_expectancy": 76.875
+  },
+  {
+    "GEOID": "49051",
+    "county_name": "Wasatch County",
+    "population_2024": 37858.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 79.525
+  },
+  {
+    "GEOID": "49019",
+    "county_name": "Grand County",
+    "population_2024": 9788.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 77.1
+  },
+  {
+    "GEOID": "49045",
+    "county_name": "Tooele County",
+    "population_2024": 84488.0,
+    "clinic_count": 0,
+    "has_clinic": 0,
+    "clinics_per_10k": 0.0,
+    "life_expectancy": 77.8375
+  }
+]
